@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://bew0qyp1cbhno"]
+
+[ext_resource type="Script" path="res://scenes/FallingSlime.gd" id="1_ghrri"]
+[ext_resource type="Texture2D" uid="uid://bs750pawoppvb" path="res://assets/kenney_platformerpack/PNG/Enemies/slimeBlock.png" id="2_5ymmm"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jlxij"]
+size = Vector2(91, 93)
+
+[node name="FallingSlime" type="RigidBody2D"]
+script = ExtResource("1_ghrri")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, -9)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_5ymmm")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+scale = Vector2(0.5, 0.5)
+shape = SubResource("RectangleShape2D_jlxij")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

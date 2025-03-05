@@ -21,4 +21,6 @@ mono_crash.*.json
 .env/
 .venv/
 env/
+
+.DS_STORE
 venv/
